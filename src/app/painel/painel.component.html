@@ -1,0 +1,38 @@
+<div class='container'>
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-sm-6">
+				<ingles-progresso [progresso]="progresso"></ingles-progresso>
+			</div>
+			<div class="col-sm-6">
+				<div class="col text-right">
+					<ingles-tentativas [tentativas]="tentativas"></ingles-tentativas>        
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h6>{{instrucao}}</h6>
+				<p>{{rodadaFrase.fraseEng}}</p>
+				<div class="form-floating">
+					<textarea 
+						class="form-control" 
+						placeholder="Escreva aqui a resposta" 
+						rows="3"
+						id="traducao" 
+						name="traducao"
+						(input)='atualizaResposta($event)' 
+						[value]="resposta"
+					>
+						{{resposta}}
+					</textarea>
+				</div>
+			</div>  
+		</div>
+		<div class="row">
+			<div class="col text-right">
+				<button type="button" class="btn btn-primary mt-2" (click)="verificarResposta()">Traduzir</button>
+			</div>
+		</div>
+	</div>
+</div>
